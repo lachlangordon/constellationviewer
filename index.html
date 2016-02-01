@@ -46,13 +46,15 @@
 					'showdate': false,
 					'showposition': false
 				});
+
+				function panView(el) {
+					var ra = el.value.ra;
+					var de = el.value.de;
+					starmap.panTo(ra, de, 3000);
+				}
 			});
 
-			function panView(el) {
-				var ra = el.value.ra;
-				var de = el.value.de;
-				starmap.panTo(ra, de, 3000);
-			}
+
 		</script>
 	</body>
 </html>
