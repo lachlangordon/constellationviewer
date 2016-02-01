@@ -23,8 +23,13 @@
 				});
 
 				$('#const_list').on('change', function() {
-					var ra = this.value.ra;
-					var de = this.value.de;
+					var coords = this.value;
+					console.log(coords);
+					coords = $.parseJSON(coords.replace(/'/g, '"'));
+					console.log(coords);
+					var ra = coords.ra;
+					var de = coords.de;
+
 					starmap.panTo(ra, de, 3000);
 				});
 
