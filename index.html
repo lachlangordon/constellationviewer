@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="http://aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.css" />
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js" charset="utf-8"></script>
 		<script type="text/javascript" src="virtualsky.js"></script>
 	</head>
@@ -23,11 +22,12 @@
 					'showposition': false
 				});
 
-				function panView(el) {
-					var ra = el.value.ra;
-					var de = el.value.de;
+				$('#const_list').on('change', function() {
+					var ra = this.value.ra;
+					var de = this.value.de;
 					starmap.panTo(ra, de, 3000);
-				}
+				});
+
 			});
 
 
@@ -35,7 +35,7 @@
 
 		<div id="starmap" style="width:400px;height:400px;"></div>
 
-		<select onchange="panView(this)">
+		<select id="const_list">
 			<option value="{'ra': 17.39, 'de': -53.58}">Ara</option>
 			<option value="{'ra': 9, 'de': -60}">Carina</option>
 			<option value="{'ra': 13, 'de': -50}">Centaurus</option>
