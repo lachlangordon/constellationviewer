@@ -21,7 +21,7 @@
 					'showposition': false,
 				});
 
-				$('#const_list').on('change', function() {
+				$('#const_list').change(function() {
 					var name = $(this).find(':selected').data('name')
 					starmap.panToConstellation(name);
 				});
