@@ -3018,6 +3018,19 @@ VirtualSky.prototype.trigger = function(ev,args){
 	if(o.length > 0) return o
 }
 
+VirtualSky.prototype.panToConstellation = function(option){
+	for(var c = 0; c < this.lines.length; c++){
+		name = this.getPhrase('constellations',this.lines[c][0]);
+		if(option === name) {
+			var ra = this.lines[c][1]*this.d2r;
+			var dec = this.lines[c][2]*this.d2r;
+			this.panTo(ra, dec, 1000);
+			break;
+		}
+			
+	}
+}
+
 // Some useful functions
 function convertTZ(s){
 	function formatHour(h){

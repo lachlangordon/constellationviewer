@@ -22,14 +22,8 @@
 				});
 
 				$('#const_list').on('change', function() {
-					var coords = this.value;
-					console.log(coords);
-					coords = $.parseJSON(coords.replace(/'/g, '"'));
-					console.log(coords);
-					var ra = coords.ra;
-					var de = coords.de;
-
-					starmap.panTo(ra, de, 1500);
+					var name = $this.find(':selected').data('name')
+					starmap.panToConstellation(name);
 				});
 
 			});
@@ -40,26 +34,26 @@
 		<div id="starmap" style="width:100%;height:400px;"></div>
 
 		<select id="const_list">
-			<option value="{'ra': 0, 'de': -65}">Tucana</option>
-			<option value="{'ra': 30, 'de': -70}">Hydrus</option>
-			<option value="{'ra': 45, 'de': -60}">Horologium</option>
-			<option value="{'ra': 48.75, 'de': -29}">Eridanus</option>
-			<option value="{'ra': 60, 'de': -60}">Reticulum</option>
-			<option value="{'ra': 75, 'de': -65}">Dorado</option>
-			<option value="{'ra': 75, 'de': -50}">Pictor</option>
-			<option value="{'ra': 135, 'de': -60}">Carina</option>
-			<option value="{'ra': 135, 'de': -50}">Vela</option>
-			<option value="{'ra': 187.5, 'de': -60}">Crux</option>
-			<option value="{'ra': 195, 'de': -50}">Centaurus</option>
-			<option value="{'ra': 225, 'de': -60}">Circinus</option>
-			<option value="{'ra': 229.5, 'de': -45}">Lupus</option>
-			<option value="{'ra': 240, 'de': -65}">Triangulum Australe</option>
-			<option value="{'ra': 240.75, 'de': -52.01}">Norma</option>
-			<option value="{'ra': 260.85, 'de': -53.58}">Ara</option>
-			<option value="{'ra': 285, 'de': -50}">Telescopium</option>
-			<option value="{'ra': 300, 'de': -65}">Pavo</option>
-			<option value="{'ra': 315, 'de': -55}">Indus</option>
-			<option value="{'ra': 330, 'de': -47}">Grus</option>
+			<option value="" data-name="Tucana">Tucana</option>
+			<option value="" data-name="Hydrus">Hydrus</option>
+			<option value="" data-name="Horologium">Horologium</option>
+			<option value="" data-name="Eridanus">Eridanus</option>
+			<option value="" data-name="Reticulum">Reticulum</option>
+			<option value="" data-name="Dorado">Dorado</option>
+			<option value="" data-name="Pictor">Pictor</option>
+			<option value="" data-name="Carina">Carina</option>
+			<option value="" data-name="Vela">Vela</option>
+			<option value="" data-name="Crux">Crux</option>
+			<option value="" data-name="Centaurus">Centaurus</option>
+			<option value="" data-name="Circinus">Circinus</option>
+			<option value="" data-name="Lupus">Lupus</option>
+			<option value="" data-name="Triangulum Australe">Triangulum Australe</option>
+			<option value="" data-name="Norma">Norma</option>
+			<option value="" data-name="Ara">Ara</option>
+			<option value="" data-name="Telescopium">Telescopium</option>
+			<option value="" data-name="Pavo">Pavo</option>
+			<option value="" data-name="Indus">Indus</option>
+			<option value="" data-name="Grus">Grus</option>
 		</select>
 	</body>
 </html>
