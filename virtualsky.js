@@ -3022,8 +3022,11 @@ VirtualSky.prototype.panToConstellation = function(option){
 	for(var c = 0; c < this.lines.length; c++){
 		name = this.getPhrase('constellations',this.lines[c][0]);
 		if(option === name) {
-			pos = this.radec2xy(this.lines[c][1]*this.d2r,this.lines[c][2]*this.d2r);
-			this.panTo(pos.x, pos.y, 1000);
+			var ra = this.lines[c][1]*this.d2r;
+			console.log(ra);
+			var dec = this.lines[c][2]*this.d2r;
+			console.log(dec);
+			this.panTo(ra, dec, 1000);
 			break;
 		}
 			
