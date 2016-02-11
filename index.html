@@ -22,7 +22,7 @@
 				});
 
 				$('#const_list').on('change', function() {
-					var name = $this.find(':selected').data('name')
+					var name = $(this).find(':selected').data('name')
 					starmap.panToConstellation(name);
 				});
 
